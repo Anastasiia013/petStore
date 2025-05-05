@@ -1,0 +1,33 @@
+.descriptionBox {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 130%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.clamped {
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+}
+
+.toggleText {
+    color: #007bff;
+    cursor: pointer;
+    margin-top: 8px;
+    user-select: none;
+}
+
+.readMore {
+    text-decoration: underline;
+    font-size: 16px;
+    line-height: 130%;
+    font-weight: 500;
+    cursor: pointer;
+}

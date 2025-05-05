@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.link {
+    text-decoration: none;
+    list-style: none;
+    padding: 40px 40px 0px;
+}
+
+.h1Main {
+    font-size: 96px;
+    font-weight: 700;
+    color: var(--white-text);
+    width: 80%;
+}
+
+h2 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 110%;
+    color: var(--main-text-color);
+    text-decoration: none;
+}
+
+h3 {
+    font-size: 40px;
+    line-height: 110%;
+    font-weight: 700;
+    color: var(--main-text-color);
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,58 @@
+.productBox {
+    display: flex;
+    gap: 32px;
+    flex-basis: 100%;
+    height: 100%;
+}
+
+.imageBox {
+    display: flex;
+    gap: 32px;
+    flex-basis: 60%;
+}
+
+.imagesBox {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: flex-start;
+}
+
+.images {
+    width: 200px;
+    height: 180px;
+    border-radius: 12px;
+}
+
+.mainImageBox {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.mainImage {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 32px;
+    flex-basis: 40%;
+}
+
+.priceInfo {
+    position: relative;
+    width: 50%;
+    display: flex;
+    gap: 16px;
+}
+
+.productOptions {
+    display: flex;
+    gap: 32px;
+}

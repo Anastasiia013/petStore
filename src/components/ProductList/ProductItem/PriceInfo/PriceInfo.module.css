@@ -1,0 +1,18 @@
+.priceBox {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.priceCurrent {
+    font-size: 40px;
+    line-height: 110%;
+    font-weight: 600;
+    color: var(--main-text-color);
+}
+
+.priceOld {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--light-grey-text);
+}

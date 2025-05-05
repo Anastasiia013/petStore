@@ -1,0 +1,23 @@
+.cartBtn {
+    position: static;
+    background-color: var(--blue-btn);
+    color: var(--white-text);
+    outline: none;
+    border: 2px transparent;
+    border-radius: 6px;
+    padding: 16px 32px;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.cartBtn:hover {
+    background-color: var(--main-text-color);
+}
+
+.cartBtn.active {
+    background-color: var(--white-text);
+    border: 1px solid var(--main-text-color);
+    color: var(--main-text-color);
+}

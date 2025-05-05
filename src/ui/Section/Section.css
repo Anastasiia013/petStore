@@ -1,0 +1,14 @@
+.section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0px;
+}
+
+.container {
+    width: 100%;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}

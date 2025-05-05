@@ -1,0 +1,1 @@
+export const selectIsModalOpen = (store) => store.modal.isOpen;

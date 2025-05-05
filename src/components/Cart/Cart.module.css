@@ -1,0 +1,55 @@
+.noItemsBox {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.cartBox {
+    display: flex;
+    width: 100%;
+    gap: 32px;
+    position: relative;
+}
+
+.ordersList {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+.orderInfo {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background-color: var(--light-grey);
+    padding: 32px 32px 0px;
+    border-radius: 12px;
+    position: sticky;
+    top: 32px;
+    height: 600px;
+}
+
+.totalItems {
+    font-size: 40px;
+    line-height: 130%;
+    color: var(--light-grey-text);
+    font-weight: 500;
+}
+
+.totalPrice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.totalBold {
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--main-text-color);
+}
+
+.h3 {
+    padding-bottom: 24px;
+}

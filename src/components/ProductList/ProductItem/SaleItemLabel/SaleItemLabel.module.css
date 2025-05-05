@@ -1,0 +1,12 @@
+.saleBox {
+    padding: 4px 8px;
+    background-color: var(--blue-btn);
+    border-radius: 6px;
+}
+
+.saleNumber {
+    color: var(--white-text);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+}

@@ -1,0 +1,20 @@
+.notFoundBox {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+
+.notFoundTextBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 36%;
+}
+
+.notFoundText {
+    text-align: center;
+    color: var(--light-grey-text);
+
+}

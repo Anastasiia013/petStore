@@ -1,0 +1,48 @@
+.customSelectWrapper {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.customSelect {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+}
+
+.arrowIcon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background-image: url('images/caretDown.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+.open .arrowIcon::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.customSelect option {
+    background-color: white;
+    color: #777;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}

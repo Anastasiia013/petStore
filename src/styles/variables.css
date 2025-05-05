@@ -1,0 +1,12 @@
+:root {
+    --main-text-color: #282828;
+    --black: #000000;
+    --light-grey: #F1F3F4;
+    --light-grey-text: #8B8B8B;
+    --grey-divider: #DDDDDD;
+    --base-font-size: 16px;
+    --blue-btn: #0D50FF;
+    --white-text: #FFFFFF;
+    --select-color: #80808080;
+    --red-error: rgb(203, 6, 6);
+}

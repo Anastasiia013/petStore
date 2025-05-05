@@ -1,0 +1,30 @@
+.filtersBox {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+.filterTitle {
+    font-size: 20px;
+    line-height: 130%;
+    font-weight: 600;
+    color: var(--main-text-color);
+}
+
+.filter input[type="text"] {
+    border: 1px solid var(--grey-divider);
+    border-radius: 6px;
+    padding: 8px 16px;
+    width: 112px;
+    font-size: 16px;
+    line-height: 126%;
+    font-weight: 500;
+    color: var(--light-grey-text);
+}

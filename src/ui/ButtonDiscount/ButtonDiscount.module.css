@@ -1,0 +1,25 @@
+.discountBtn {
+    color: var(--main-text-color);
+    background-color: var(--white-text);
+    margin-top: 16px;
+    width: 100%;
+    padding: 16px 32px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    font-size: 20px;
+    line-height: 130%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.discountBtn:hover {
+    color: var(--white-text);
+    background-color: var(--main-text-color);
+}
+
+.discountBtn.active {
+    background-color: var(--light-grey);
+    opacity: 0.5;
+    color: var(--blue-btn);
+}

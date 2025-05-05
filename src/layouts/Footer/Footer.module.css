@@ -1,0 +1,61 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerSection {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    gap: 40px;
+}
+
+.footerBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 32px;
+}
+
+.footerBoxBlock {
+    display: flex;
+    gap: 32px;
+}
+
+.footerBoxBlockElement {
+    background-color: var(--light-grey);
+    flex-basis: 35%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 12px;
+}
+
+.long {
+    flex-basis: 65%;
+}
+
+.h5 {
+    color: var(--light-grey-text);
+    font-size: 1.25rem;
+    line-height: 130%;
+    font-weight: 500;
+}
+
+.p {
+    font-size: 2.5rem;
+    line-height: 110%;
+    font-weight: 600;
+    color: var(--main-black-text);
+}
+
+.imgBox {
+    display: flex;
+    gap: 16px;
+}
+
+.map {
+    width: 100%;
+}
