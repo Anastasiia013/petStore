@@ -8,6 +8,7 @@ import DescriptionBox from "./DescriptionBox/DescriptionBox";
 import Section from "../../ui/Section/Section";
 
 import { addToCart } from "../../redux/cart/cartSlice";
+import backendInstance from "../../api/backendInstance";
 
 import styles from './SingleProduct.module.css';
 
@@ -22,17 +23,18 @@ const SingleProduct = ({ product }) => {
         dispatch(addToCart(product));
     };
 
+    const baseURL = backendInstance.defaults.baseURL;
     return (
         <Section>
             <div className={styles.productBox}>
                 <div className={styles.imageBox}>
                     <div className={styles.imagesBox}>
-                        <img className={styles.images} src={`http://localhost:3333${image}`} alt={title} />
-                        <img className={styles.images} src={`http://localhost:3333${image}`} alt={title} />
-                        <img className={styles.images} src={`http://localhost:3333${image}`} alt={title} />
+                        <img className={styles.images} src={`${baseURL}/${image}`} alt={title} />
+                        <img className={styles.images} src={`${baseURL}/${image}`} alt={title} />
+                        <img className={styles.images} src={`${baseURL}/${image}`} alt={title} />
                     </div>
                     <div className={styles.mainImageBox}>
-                        <img className={styles.mainImage} src={`http://localhost:3333${image}`} alt={title} />
+                        <img className={styles.mainImage} src={`${baseURL}/${image}`} alt={title} />
                     </div>
                 </div>
                 <div className={styles.productInfo}>

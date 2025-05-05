@@ -5,6 +5,8 @@ import { deleteFromCart } from "../../../redux/cart/cartSlice";
 import Counter from "../../SingleProduct/Counter/Counter";
 import ClearBtn from '/images/clearBtn.png'
 
+import backendInstance from "../../../api/backendInstance";
+
 import styles from './CartItem.module.css'
 
 const CartItem = ({ ...item }) => {
@@ -16,10 +18,11 @@ const CartItem = ({ ...item }) => {
         dispatch(deleteFromCart(id));
     }, [dispatch]);
 
+    const baseURL = backendInstance.defaults.baseURL;
     return (
         <li className={styles.cartItem} key={id}>
             <Link to={`/products/${id}`}>
-                <img className={styles.cartItemImage} src={`http://localhost:3333${image}`} alt={title} />
+                <img className={styles.cartItemImage} src={`${baseURL}/${image}`} alt={title} />
             </Link>
 
             <div className={styles.cartDescription}>

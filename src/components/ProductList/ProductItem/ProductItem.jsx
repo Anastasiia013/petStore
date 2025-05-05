@@ -7,6 +7,8 @@ import SaleItemLabel from "./SaleItemLabel/SaleItemLabel";
 import PriceInfo from "./PriceInfo/PriceInfo";
 import { addToCart } from "../../../redux/cart/cartSlice";
 
+import backendInstance from "../../../api/backendInstance";
+
 import styles from './ProductItem.module.css';
 
 const ProductItem = ({ pathBuilder, from, ...product }) => {
@@ -19,6 +21,8 @@ const ProductItem = ({ pathBuilder, from, ...product }) => {
         product => dispatch(addToCart(product)),
         [dispatch]
     );
+
+    const baseURL = backendInstance.defaults.baseURL;
     return (
         <div
             key={id}
@@ -39,7 +43,7 @@ const ProductItem = ({ pathBuilder, from, ...product }) => {
                     )}
                     <img
                         className={styles.productImg}
-                        src={`http://localhost:3333${image}`}
+                        src={`${baseURL}/${image}`}
                         alt={title}
                     />
                     <Button
