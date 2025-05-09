@@ -1,7 +1,18 @@
 .productsList {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    display: flex;
+    flex-wrap: wrap;
     gap: 32px;
     align-content: center;
     list-style: none;
+}
+
+@media (max-width: 672px) {
+    .productsList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
 }

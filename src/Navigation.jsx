@@ -9,10 +9,13 @@ import ProductsByCategoryPage from './pages/ProductsByCategoryPage/ProductsByCat
 import CartPage from './pages/CartPage/CartPage'
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 
+import ScrollToTop from './ui/ScrollToTop/ScrollToTop'
+
 function Navigation() {
 
     return (
         <>
+        <ScrollToTop/>
             <Routes>
                 <Route path='/' element={<MainPage />} />
 

@@ -7,6 +7,6 @@
 .saleNumber {
     color: var(--white-text);
     font-weight: 600;
-    font-size: 20px;
-    line-height: 26px;
+    font-size: var(--h4-font-size);
+    line-height: 160%;
 }

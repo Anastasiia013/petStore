@@ -26,7 +26,7 @@
     align-items: center;
     gap: 16px;
     padding: 32px 0px;
-    
+
 }
 
 .orderFormInput {
@@ -34,7 +34,7 @@
     padding: 16px 32px;
     border-radius: 6px;
     border: 1px solid var(--grey-divider);
-    font-size: 20px;
+    font-size: var(--h4-font-size);
     line-height: 130%;
     font-weight: 500;
     outline: none;
@@ -44,7 +44,17 @@
     opacity: 1;
 }
 
-.error{
+.orderFormInput:last-of-type {
+    margin-bottom: 20px;
+}
+
+.error {
     color: var(--red-error);
     opacity: 0.7;
 }
+
+/* @media (max-width: 1090px) {
+    .orderForm {
+        width: 100%;
+    }
+} */

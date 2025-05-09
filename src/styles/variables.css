@@ -9,4 +9,10 @@
     --white-text: #FFFFFF;
     --select-color: #80808080;
     --red-error: rgb(203, 6, 6);
+
+    --h1-font-size: clamp(2.5rem, 6vw, 6rem);
+    --h2-font-size: clamp(2rem, 4vw, 4rem);
+    --h3-font-size: clamp(1.5rem, 3vw, 2.5rem);
+    --h4-font-size: clamp(1rem, 2vw, 1.25rem);
+    --h5-font-size: clamp(0.8rem, 1vw, 1rem);
 }

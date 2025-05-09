@@ -1,11 +1,22 @@
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 0px 40px;
-    height: 128px;
+    padding: 0 clamp(1rem, 5vw, 40px);
+    height: 16vh;
     align-items: center;
     position: sticky;
     top: 0;
     background-color: var(--white-text);
     z-index: 99999;
+    position: relative;
+}
+
+.logo {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        display: none;
+    }
 }

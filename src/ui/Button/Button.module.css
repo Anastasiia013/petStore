@@ -7,7 +7,7 @@
     border-radius: 6px;
     padding: 16px 32px;
     font-weight: 600;
-    font-size: 20px;
+    font-size: var(--h4-font-size);
     cursor: pointer;
     transition: 0.3s all;
 }
@@ -21,3 +21,4 @@
     border: 1px solid var(--main-text-color);
     color: var(--main-text-color);
 }
+

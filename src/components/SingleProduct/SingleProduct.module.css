@@ -9,10 +9,11 @@
     display: flex;
     gap: 32px;
     flex-basis: 60%;
+    align-items: center;
 }
 
 .imagesBox {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 24px;
     justify-content: flex-start;
@@ -29,7 +30,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
 }
 
 .mainImage {

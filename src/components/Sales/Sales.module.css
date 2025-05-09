@@ -1,6 +1,15 @@
 .productList {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
     gap: 32px;
     list-style: none;
+}
+
+@media (max-width:672px) {
+    .productList {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }

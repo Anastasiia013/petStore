@@ -1,8 +1,9 @@
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import Filter from '../Filter/Filter';
 import ProductItem from './ProductItem/ProductItem';
 import Section from '../../ui/Section/Section';
+import CustomSpinner from '../../ui/CustomSpinner/CustomSpinner';
 
 import styles from './ProductList.module.css';
 
@@ -13,6 +14,8 @@ const ProductList = ({ pathBuilder, data, error, loading, showDiscount, from }) 
         discountOnly: false,
         sortBy: 'default',
     });
+
+    // const [searchParams, useSearchParams] = useSearchParams();
 
     const products = data;
 
@@ -37,23 +40,43 @@ const ProductList = ({ pathBuilder, data, error, loading, showDiscount, from }) 
             return 0;
         });
 
+    if (loading) {
+        return (
+            <div className="loading">
+                <CustomSpinner />
+            </div>
+        );
+    }
+    if (error) {
+        return (
+            <Section>
+                <p>Oops! Something went wrong... Try another one.</p>
+            </Section>
+        );
+    }
+
+    if (!loading && !error && filtered.length === 0) {
+        return (
+            <Section>
+                <p>Oops! We haven`t found anything for you...</p>
+            </Section>
+        )
+    }
+
     return (
         <Section>
-            <Filter
-                filters={filters}
-                setFilters={setFilters}
-                showDiscount={showDiscount}
-            />
-
-            {loading && <p>Loading...</p>}
-            {error && <p>Error: {error}</p>}
-            {!loading && !error && filtered.length === 0 && <p>No products</p>}
+            {filtered.length > 0 && (
+                <Filter
+                    filters={filters}
+                    setFilters={setFilters}
+                    showDiscount={showDiscount}
+                />
+            )}
 
             <ul className={styles.productsList}>
                 {filtered.map(item => (
                     <li key={item.id}>
                         <ProductItem
-                            key={item.id}
                             {...item}
                             pathBuilder={pathBuilder}
                             from={from}

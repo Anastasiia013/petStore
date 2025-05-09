@@ -28,6 +28,7 @@
 
 .discountImage {
     object-fit: cover;
+    width: 100%;
 }
 
 .discountForm {
@@ -39,12 +40,27 @@
     padding: 32px 0px;
 }
 
+@media (max-width: 1090px) {
+    .discountFormBlock {
+        flex-direction: column-reverse;
+    }
+
+    .discountForm {
+        width: 100%;
+        padding-top: 0px;
+    }
+
+    .imageBox {
+        display: none;
+    }
+}
+
 .discountFormInput {
     width: 100%;
     padding: 16px 32px;
     border-radius: 6px;
     border: 1px solid var(--white-text);
-    font-size: 20px;
+    font-size: var(--h4-font-size);
     line-height: 130%;
     font-weight: 500;
     background-color: transparent;

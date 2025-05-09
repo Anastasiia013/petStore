@@ -13,11 +13,11 @@
     min-height: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     position: relative;
-    height: 284px;
-    width: 319px;
+    height: clamp(180px, 35vw, 284px);
+    width: clamp(200px, 40vw, 319px);
 }
 
 .productImg {
@@ -47,4 +47,27 @@
 
 .description:hover {
     color: var(--blue-btn);
+}
+
+@media (max-width: 672px) {
+    .productItem {
+        width: fit-content;
+    }
+
+    .productImgBox {
+        width: auto;
+        height: auto;
+    }
+}
+
+@media (max-width: 350px) {
+    .productItem {
+        width: 280px;
+        height: min-content;
+    }
+
+    .productImg {
+        max-height: 100%;
+        max-width: 280px;
+    }
 }

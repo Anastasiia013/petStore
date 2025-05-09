@@ -6,24 +6,34 @@ const cartSlice = createSlice({
   reducers: {
     addToCart(state, action) {
       const product = state.find((item) => item.id === action.payload.id);
+
       if (product) {
-        product.count += 1;
+        product.count += action.payload.count || 1;
       } else {
-        state.push({ ...action.payload, count: 1 });
+        state.push({ ...action.payload, count: action.payload.count || 1 });
       }
     },
     increaseCountInCart(state, action) {
-      const product = state.find((item) => item.id === action.payload);
+      const { id, count = 1 } = action.payload;
+      const product = state.find(item => item.id === id);
+      if (product) {
+        product.count += count;
+      }
+    },
+    increaseCount(state, { payload }) {
+      const { id } = payload;
+      const product = state.find(item => item.id === id);
       if (product) {
         product.count += 1;
       }
     },
+
     decreaseCountinCart(state, action) {
-      const product = state.find((item) => item.id === action.payload);
-      if (product) {
-        product.count -= 1;
-        if (product.count <= 0) {
-          return state.filter((item) => item.id !== action.payload);
+      const index = state.findIndex((item) => item.id === action.payload);
+      if (index !== -1) {
+        state[index].count -= 1;
+        if (state[index].count === 0) {
+          state.splice(index, 1);
         }
       }
     },
@@ -39,6 +49,7 @@ const cartSlice = createSlice({
 export const {
   addToCart,
   increaseCountInCart,
+  increaseCount,
   decreaseCountinCart,
   deleteFromCart,
   clearCart,

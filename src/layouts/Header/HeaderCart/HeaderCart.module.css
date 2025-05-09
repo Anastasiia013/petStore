@@ -1,5 +1,26 @@
+.wrapper {
+    position: relative;
+    display: inline-block;
+}
+
 .cart {
     width: 48px;
     height: 48px;
     cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    background-color: var(--blue-btn);
+    color: #fff;
+    font-size: var(--h5-font-size);
+    font-weight: 600;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

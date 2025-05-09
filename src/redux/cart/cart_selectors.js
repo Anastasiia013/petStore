@@ -10,3 +10,7 @@ export const selectTotalCartPrice = store => {
         return acum + item.count * actualPrice;
     }, 0)
 };
+
+export const selectUniqueCartItemsCount = store => {
+    return store.cart.length;
+};

@@ -39,9 +39,15 @@ const Footer = () => {
                             <p className={styles.p}>24 hours a day</p>
                         </div>
                     </div>
-                    <a href="https://maps.app.goo.gl/YPMzGPSNnqYvS6wb6" target='_blank'>
-                        <img className={styles.map} src={Map} alt="Map Image" />
-                    </a>
+                    <div style={{ position: 'relative', paddingTop: '25.65%', height: 0, overflow: 'hidden', borderRadius: '12px' }}>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.722512797303!2d13.3585591!3d52.5022624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84fb0e85329a1%3A0xa141f1e83418ee88!2sIT%20Career%20Hub!5e0!3m2!1sde!2sat!4v1746782642780!5m2!1sde!2sat"
+                            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        />
+                    </div>
                 </div>
             </Section>
         </footer>

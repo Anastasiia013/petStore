@@ -1,26 +1,41 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useCallback } from "react";
+
+import { selectCart } from "../../redux/cart/cart_selectors";
 
 import PriceInfo from "../ProductList/ProductItem/PriceInfo/PriceInfo";
 import SaleItemLabel from "../ProductList/ProductItem/SaleItemLabel/SaleItemLabel";
 import Button from '../../ui/Button/Button';
-import Counter from "./Counter/Counter";
+import NewCounter from "./Counter/NewCounter";
 import DescriptionBox from "./DescriptionBox/DescriptionBox";
 import Section from "../../ui/Section/Section";
 
-import { addToCart } from "../../redux/cart/cartSlice";
+import { addToCart, increaseCountInCart } from "../../redux/cart/cartSlice";
 import backendInstance from "../../api/backendInstance";
 
 import styles from './SingleProduct.module.css';
+import { useState } from "react";
 
 const SingleProduct = ({ product }) => {
     if (!product) return null;
 
+    const cartItems = useSelector(selectCart);
     const { id, title, image, price, discont_price, description } = product;
 
     const dispatch = useDispatch();
 
+    const [count, setCount] = useState(1);
+
+    const onPlus = () => setCount(prev => prev + 1);
+    const onMinus = () => setCount(prev => (prev > 1 ? prev - 1 : 1));
+
     const handleAddToCart = () => {
-        dispatch(addToCart(product));
+        const itemInCart = cartItems.find(item => item.id === id);
+        if (!itemInCart) {
+            dispatch(addToCart({ ...product, count }));
+        } else {
+            dispatch(increaseCountInCart({ id, count }));
+        }
     };
 
     const baseURL = backendInstance.defaults.baseURL;
@@ -28,11 +43,6 @@ const SingleProduct = ({ product }) => {
         <Section>
             <div className={styles.productBox}>
                 <div className={styles.imageBox}>
-                    <div className={styles.imagesBox}>
-                        <img className={styles.images} src={`${baseURL}/${image}`} alt={title} />
-                        <img className={styles.images} src={`${baseURL}/${image}`} alt={title} />
-                        <img className={styles.images} src={`${baseURL}/${image}`} alt={title} />
-                    </div>
                     <div className={styles.mainImageBox}>
                         <img className={styles.mainImage} src={`${baseURL}/${image}`} alt={title} />
                     </div>
@@ -51,7 +61,7 @@ const SingleProduct = ({ product }) => {
                         )}
                     </div>
                     <div className={styles.productOptions}>
-                        <Counter id={id} product={product} />
+                        <NewCounter plus={onPlus} minus={onMinus} count={count} />
                         <Button
                             status="true"
                             position="relative"

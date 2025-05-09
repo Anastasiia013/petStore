@@ -7,6 +7,7 @@ import Section from "../../ui/Section/Section";
 
 import { getSingleProduct } from "../../api/products";
 import { getSingleCategory } from "../../api/categories";
+import CustomSpinner from "../../ui/CustomSpinner/CustomSpinner";
 
 const SingleProductPage = () => {
     const location = useLocation();
@@ -42,9 +43,20 @@ const SingleProductPage = () => {
         fetchData();
     }, [categoryId, productId]);
 
-    if (loading) return <Section><p>Loading...</p></Section>;
-    if (error) return <Section><p>Error: {error}</p></Section>;
-    if (!product) return <Section><p>No product are found.</p></Section>;
+    if (loading) {
+        return (
+            <div className="loading">
+                <CustomSpinner />
+            </div>
+        );
+    }
+    if (error || !product) {
+        return (
+            <Section>
+                <p>No products are found.</p>
+            </Section>
+        );
+    }
 
     const breadcrumbs = [];
 

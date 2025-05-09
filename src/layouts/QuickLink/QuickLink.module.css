@@ -22,3 +22,14 @@
     font-size: 14px;
     color: var(--main-text-color);
 }
+
+@media (max-width: 560px) {
+    .line,
+    .backBtn {
+        display: none;
+    }
+
+    .headerWrapper {
+        padding: 10px 20px;
+    }
+}

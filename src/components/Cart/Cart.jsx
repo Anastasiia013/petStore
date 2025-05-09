@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
+import { useCallback } from "react";
 import { toggleModal } from '../../redux/modal/modalSlice';
 
 import {
@@ -24,14 +25,17 @@ const Cart = () => {
 
     const dispatch = useDispatch();
 
-    // const onClearCart = useCallback(() => {
-    //     dispatch(clearCart());
-    // }, [dispatch]);
+    const onClearCart = useCallback(() => {
+        dispatch(clearCart());
+    }, [dispatch]);
 
-    const elements = items.map((item) => (
-        <CartItem key={item.id} {...item} />
-    ));
+    const elements = items
+        .filter(item => item.count > 0)
+        .map((item) => (
+            <CartItem key={item.id} {...item} />
+        ));
 
+    
     return (
         <Section>
             <div>
@@ -55,8 +59,7 @@ const Cart = () => {
                     </div>
                 )}
             </div>
-
-
+            <button onClick={onClearCart}>CLEAR CART</button>
         </Section>
     );
 };

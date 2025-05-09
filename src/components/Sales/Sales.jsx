@@ -1,7 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import React from 'react';
 import { getAllProducts } from '../../api/products';
 import useFetch from '../../hooks/useFetch';
+import CustomSpinner from '../../ui/CustomSpinner/CustomSpinner';
 
 import ProductItem from '../ProductList/ProductItem/ProductItem';
 import Section from '../../ui/Section/Section';
@@ -19,18 +21,25 @@ const Sales = ({ limit }) => {
         .slice(0, limit);
 
     return (
-        <Section>
-            {loading && <p>Loading...</p>}
-            {error && <p>Error: {error}</p>}
-            <ul className={styles.productList}>
-                {discountedProducts.map(product => (
-                    <li key={product.id}>
-                        <ProductItem {...product} pathBuilder={(id) => `/sales/${id}`} />
-                    </li>
-                ))}
-            </ul>
-        </Section>
+        <>
+            {loading || error ? (
+                <div className='loading'>
+                    {loading && <CustomSpinner />}
+                    {error && <p>Error: {error}</p>}
+                </div>
+            ) : (
+                <Section>
+                    <ul className={styles.productList}>
+                        {discountedProducts.map(product => (
+                            <li key={product.id}>
+                                <ProductItem {...product} pathBuilder={(id) => `/sales/${id}`} />
+                            </li>
+                        ))}
+                    </ul>
+                </Section>
+            )}
+        </>
     );
 };
 
-export default Sales;
+export default React.memo(Sales);
