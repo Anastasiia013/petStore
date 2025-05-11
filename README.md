@@ -55,6 +55,5 @@ Footer — соцсети, контакты и карта.
     Адаптив и модульные стили
     Анимации и SVG
 
-    **Anastasiia Posokhova**
-
+**Anastasiia Posokhova**
 [GitHub](https://github.com/Anastasiia013)
