@@ -4,6 +4,7 @@ import { useId, useState } from "react";
 import Section from "../../ui/Section/Section";
 import FormImage from '/images/form.png'
 import ButtonDiscount from '../../ui/ButtonDiscount/ButtonDiscount'
+import TextField from '../../layouts/TextField/TextField';
 
 import { getSale } from "../../api/saleRequest";
 import { defaultValues } from './discountFields';
@@ -54,25 +55,46 @@ const DiscountForm = () => {
                 <div className={styles.discountFormBox}>
                     <h2 className={styles.h2}>5% off on the first order</h2>
                     <div className={styles.discountFormBlock}>
+                        <div className={styles.imageBox}>
+                            <img className={styles.discountImage} src={FormImage} alt="" />
+                        </div>
                         {loading || error ? (
-                            <>
+                            <div style={{ width: "50%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                                 {loading && <CustomSpinner />}
                                 {error && <p className={styles.error}>Something went wrong: {error}</p>}
-                            </>
+                            </div>
                         ) : (
                             <>
-                                <div className={styles.imageBox}>
-                                    <img className={styles.discountImage} src={FormImage} alt="" />
-                                </div>
                                 <form onSubmit={handleSubmit(onSubmit)} className={styles.discountForm}>
-                                    <input {...register("name", { required: "Please, enter your name." })} className={styles.discountFormInput} type="text" id={nameId} placeholder="Name" />
-                                    {errors.name && <p className={styles.error}>{errors.name.message}</p>}
+                                    <TextField
+                                        register={register}
+                                        errors={errors}
+                                        name="name"
+                                        type="text"
+                                        id={nameId}
+                                        placeholder="Name"
+                                    />
+                                    {errors.name && <p className={styles.discontFormError}>{errors.name.message}</p>}
 
-                                    <input {...register("phone", { required: "Please, enter your phone number." })} className={styles.discountFormInput} type="tel" id={phoneId} placeholder="Phone number" />
-                                    {errors.phone && <p className={styles.error}>{errors.phone.message}</p>}
+                                    <TextField
+                                        register={register}
+                                        errors={errors}
+                                        name="phone"
+                                        type="tel"
+                                        id={phoneId}
+                                        placeholder="Phone number"
+                                    />
+                                    {errors.phone && <p className={styles.discontFormError}>{errors.phone.message}</p>}
 
-                                    <input {...register("email", { required: "Please, enter your Email adress." })} className={styles.discountFormInput} type="email" id={emailId} placeholder="Email" />
-                                    {errors.email && <p className={styles.error}>{errors.email.message}</p>}
+                                    <TextField
+                                        register={register}
+                                        errors={errors}
+                                        name="email"
+                                        type="email"
+                                        id={emailId}
+                                        placeholder="Email"
+                                    />
+                                    {errors.email && <p className={styles.discontFormError}>{errors.email.message}</p>}
 
                                     <ButtonDiscount isSuccess={isSuccess} />
                                 </form>

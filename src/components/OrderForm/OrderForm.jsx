@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import CustomSpinner from '../../ui/CustomSpinner/CustomSpinner';
 
 import OrderButtonWrapper from '../../ui/OrderButtonWrapper/OrderButtonWrapper';
+import TextField from '../../layouts/TextField/TextField';
 import { defaultValues } from './orderFields';
 import { setOrder } from '../../api/order';
 import { clearCart } from '../../redux/cart/cartSlice';
@@ -69,14 +70,35 @@ const OrderForm = ({ onSuccess }) => {
             ) : (
                 <>
                     <form onSubmit={handleSubmit(onSubmit)} className={styles.orderForm}>
-                        <input {...register("name", { required: "Please, enter your name." })} className={styles.orderFormInput} type="text" id={nameId} placeholder="Name" />
-                        {errors.name && <p className={styles.error}>{errors.name.message}</p>}
+                        <TextField
+                            register={register}
+                            errors={errors}
+                            name="name"
+                            type="text"
+                            id={nameId}
+                            placeholder="Name"
+                        />
+                        {errors.name && <p className={styles.orderFormError}>{errors.name.message}</p>}
 
-                        <input {...register("phone", { required: "Please, enter your phone number." })} className={styles.orderFormInput} type="tel" id={phoneId} placeholder="Phone number" />
-                        {errors.phone && <p className={styles.error}>{errors.phone.message}</p>}
+                        <TextField
+                            register={register}
+                            errors={errors}
+                            name="phone"
+                            type="tel"
+                            id={phoneId}
+                            placeholder="Phone number"
+                        />
+                        {errors.phone && <p className={styles.orderFormError}>{errors.phone.message}</p>}
 
-                        <input {...register("email", { required: "Please, enter your Email adress." })} className={styles.orderFormInput} type="email" id={emailId} placeholder="Email" />
-                        {errors.email && <p className={styles.error}>{errors.email.message}</p>}
+                        <TextField
+                            register={register}
+                            errors={errors}
+                            name="email"
+                            type="email"
+                            id={emailId}
+                            placeholder="Email"
+                        />
+                        {errors.email && <p className={styles.orderFormError}>{errors.email.message}</p>}
 
                         <OrderButtonWrapper />
                     </form>

@@ -10,7 +10,8 @@ const Button = ({
     left,
     right,
     bottom,
-    width,
+    width = "inherit",
+    minWidth,
     target,
     action,
     type
@@ -46,6 +47,7 @@ const Button = ({
                 right,
                 bottom,
                 width,
+                minWidth
             }}
         >
             {text}

@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useCallback } from "react";
 
 import { selectCart } from "../../redux/cart/cart_selectors";
 
 import PriceInfo from "../ProductList/ProductItem/PriceInfo/PriceInfo";
 import SaleItemLabel from "../ProductList/ProductItem/SaleItemLabel/SaleItemLabel";
 import Button from '../../ui/Button/Button';
-import NewCounter from "./Counter/NewCounter";
+import Counter from "./Counter/Counter";
 import DescriptionBox from "./DescriptionBox/DescriptionBox";
 import Section from "../../ui/Section/Section";
 
@@ -42,10 +41,17 @@ const SingleProduct = ({ product }) => {
     return (
         <Section>
             <div className={styles.productBox}>
-                <div className={styles.imageBox}>
-                    <div className={styles.mainImageBox}>
-                        <img className={styles.mainImage} src={`${baseURL}/${image}`} alt={title} />
-                    </div>
+                {/* <div className={styles.mainImageBox}> */}
+                <div
+                    className={styles.imageBox}
+                    style={{
+                        backgroundImage: `url(${baseURL}/${image})`,
+                        // backgroundPosition: "start",
+                        backgroundRepeat: "no-repeat",
+                        // backgroundSize: "cover",
+                    }}
+                >
+                    {/* </div> */}
                 </div>
                 <div className={styles.productInfo}>
                     <h3>{title}</h3>
@@ -61,12 +67,12 @@ const SingleProduct = ({ product }) => {
                         )}
                     </div>
                     <div className={styles.productOptions}>
-                        <NewCounter plus={onPlus} minus={onMinus} count={count} />
+                        <Counter plus={onPlus} minus={onMinus} count={count} />
                         <Button
                             status="true"
                             position="relative"
                             text="Add to cart"
-                            width="60%"
+
                             action={handleAddToCart}
                         />
                     </div>

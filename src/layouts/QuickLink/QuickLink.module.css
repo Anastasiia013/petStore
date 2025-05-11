@@ -33,3 +33,9 @@
         padding: 10px 20px;
     }
 }
+
+@media (max-width: 768px) {
+    .headerWrapper {
+        padding: 0px 20px
+    }
+}

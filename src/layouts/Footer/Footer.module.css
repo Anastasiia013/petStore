@@ -23,12 +23,6 @@
     gap: 32px;
 }
 
-@media (max-width: 1090px) {
-    .footerBoxBlock {
-        flex-direction: column;
-    }
-}
-
 .footerBoxBlockElement {
     background-color: var(--light-grey);
     flex-basis: 35%;
@@ -64,4 +58,16 @@
 
 .map {
     width: 100%;
+}
+
+@media (max-width: 1090px) {
+    .footerBoxBlock {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 872px) {
+    .footer {
+        padding: 0px 20px;
+    }
 }

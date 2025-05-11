@@ -1,0 +1,44 @@
+.discountFormInput {
+    width: 100%;
+    padding: 16px 32px;
+    border-radius: 6px;
+    border: 1px solid var(--white-text);
+    font-size: var(--h4-font-size);
+    line-height: 130%;
+    font-weight: 500;
+    background-color: transparent;
+    color: var(--white-text);
+}
+
+.discountFormInput::placeholder {
+    color: var(--white-text);
+}
+
+.orderFormInput {
+    width: 100%;
+    padding: 16px 32px;
+    border-radius: 6px;
+    border: 1px solid var(--grey-divider);
+    font-size: var(--h4-font-size);
+    line-height: 130%;
+    font-weight: 500;
+    outline: none;
+}
+
+.orderFormInput::placeholder {
+    opacity: 1;
+}
+
+.orderFormInput:last-of-type {
+    margin-bottom: 20px;
+}
+
+.orderFormError {
+    color: var(--red-error);
+    opacity: 0.7;
+}
+
+.discontFormError {
+    color: var(--white-text);
+    opacity: 0.5;
+}

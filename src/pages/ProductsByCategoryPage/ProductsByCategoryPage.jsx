@@ -5,7 +5,7 @@ import { getSingleCategory } from "../../api/categories";
 
 import ProductList from "../../components/ProductList/ProductList";
 import Breadcrumbs from "../../layouts/BreadCrumbs/BreadCrumbs";
-import SimpleTitle from "../../layouts/SimpleTitle/SimpleTitle";
+import {SimpleTitle} from "../../layouts/PageTitle/PageTitle";
 import Section from "../../ui/Section/Section";
 import CustomSpinner from "../../ui/CustomSpinner/CustomSpinner";
 
@@ -56,7 +56,7 @@ const ProductsByCategoryPage = () => {
                     { name: categoryTitle, to: `/categories/${categoryId}` }
                 ]}
             />
-            <SimpleTitle to={`/categories/${categoryId}`} title={categoryTitle} />
+            <SimpleTitle title={categoryTitle} />
             <ProductList data={products} loading={loading} error={error} pathBuilder={(id) => `/categories/${categoryId}/products/${id}`} />
         </main>
     );

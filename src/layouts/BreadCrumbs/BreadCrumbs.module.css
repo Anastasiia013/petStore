@@ -40,3 +40,15 @@
     background-color: #ddd;
     transform: rotate(90deg);
 }
+
+@media(max-width:1090px) {
+    .breadcrumbs {
+        padding: 0px 20px;
+    }
+}
+
+@media(max-width:872px) {
+    .breadcrumbs {
+        display: none;
+    }
+}

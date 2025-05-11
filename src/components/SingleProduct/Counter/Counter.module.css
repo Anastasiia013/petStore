@@ -1,5 +1,6 @@
 .counter {
     display: flex;
+    width: auto;
     justify-content: space-between;
     height: 100%;
     border-top: 1px solid var(--grey-divider);
@@ -9,8 +10,8 @@
 
 .quantity {
     padding: 16px 0px;
-    min-width: 60px;
-    width: 50%;
+    min-width: 80px;
+    /* width: 60%; */
     align-items: center;
     display: flex;
     justify-content: center;

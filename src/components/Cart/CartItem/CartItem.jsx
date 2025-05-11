@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteFromCart, increaseCount, decreaseCountinCart } from "../../../redux/cart/cartSlice";
-import NewCounter from "../../SingleProduct/Counter/NewCounter";
+import Counter from "../../SingleProduct/Counter/Counter";
 import ClearBtn from '/images/clearBtn.png'
 
 import backendInstance from "../../../api/backendInstance";
@@ -42,7 +42,7 @@ const CartItem = ({ ...item }) => {
                 </Link>
 
                 <div className={styles.itemBox}>
-                    <NewCounter
+                    <Counter
                         plus={() => onIncreaseCart(id)}
                         minus={() => onDecreaseCart(id)}
                         count={count}
@@ -60,6 +60,7 @@ const CartItem = ({ ...item }) => {
                     </div>
                 </div>
             </div>
+            <div style={{width: "30px"}}></div>
 
             <button className={styles.cartItemBtn} onClick={() => onDeleteFromCart(id)}>
                 <img src={ClearBtn} alt="Remove Item" /></button>

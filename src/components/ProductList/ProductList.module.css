@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
-    align-content: center;
+    /* justify-content: space-around; */
     list-style: none;
 }
 

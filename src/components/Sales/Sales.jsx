@@ -1,10 +1,8 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import React from 'react';
+
 import { getAllProducts } from '../../api/products';
 import useFetch from '../../hooks/useFetch';
 import CustomSpinner from '../../ui/CustomSpinner/CustomSpinner';
-
 import ProductItem from '../ProductList/ProductItem/ProductItem';
 import Section from '../../ui/Section/Section';
 

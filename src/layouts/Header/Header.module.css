@@ -15,6 +15,18 @@
     display: block;
 }
 
+@media (max-width:1090px) {
+    .header {
+        padding: 0px 20px;
+    }
+}
+
+@media (max-width: 872px) {
+    .header {
+        height: 12vh;
+    }
+}
+
 @media (max-width: 768px) {
     .logo {
         display: none;

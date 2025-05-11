@@ -1,5 +1,5 @@
 .discountFormBox {
-    background-color: var(--blue-btn);
+    background: linear-gradient(to right, var(--form-gradient-left), var(--form-gradient-right));
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -55,7 +55,7 @@
     }
 }
 
-.discountFormInput {
+/* .discountFormInput {
     width: 100%;
     padding: 16px 32px;
     border-radius: 6px;
@@ -69,9 +69,9 @@
 
 .discountFormInput::placeholder {
     color: var(--white-text);
-}
+} */
 
-.error {
+.discontFormError {
     color: var(--white-text);
     opacity: 0.5;
 }

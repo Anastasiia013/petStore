@@ -1,14 +1,13 @@
-import useFetch from "../../hooks/useFetch";
 import { getAllCategories } from "../../api/categories";
 import Categories from "../../components/Categories/Categories";
 import Breadcrumbs from "../../layouts/BreadCrumbs/BreadCrumbs";
-import SimpleTitle from "../../layouts/SimpleTitle/SimpleTitle";
+import { SimpleTitle } from "../../layouts/PageTitle/PageTitle";
 
 const CategoriesPage = () => {
     return (
         <main>
             <Breadcrumbs custom={[{ name: "Categories", to: "/categories" }]} />
-            <SimpleTitle to="/categories" title="Categories" />
+            <SimpleTitle title="Categories" />
             <Categories fetchData={() => getAllCategories()} />
         </main>
     )

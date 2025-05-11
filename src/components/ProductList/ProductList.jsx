@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useProductsFilters } from '../../hooks/useProductsFilters';
+
 import Filter from '../Filter/Filter';
 import ProductItem from './ProductItem/ProductItem';
 import Section from '../../ui/Section/Section';
@@ -8,14 +8,7 @@ import CustomSpinner from '../../ui/CustomSpinner/CustomSpinner';
 import styles from './ProductList.module.css';
 
 const ProductList = ({ pathBuilder, data, error, loading, showDiscount, from }) => {
-    const [filters, setFilters] = useState({
-        min: '',
-        max: '',
-        discountOnly: false,
-        sortBy: 'default',
-    });
-
-    // const [searchParams, useSearchParams] = useSearchParams();
+    const { filters, updateFilters } = useProductsFilters();
 
     const products = data;
 
@@ -51,6 +44,7 @@ const ProductList = ({ pathBuilder, data, error, loading, showDiscount, from }) 
         return (
             <Section>
                 <p>Oops! Something went wrong... Try another one.</p>
+                <Button target="/" status="true" position="relative" width="20%" text="Go Home" />
             </Section>
         );
     }
@@ -58,6 +52,11 @@ const ProductList = ({ pathBuilder, data, error, loading, showDiscount, from }) 
     if (!loading && !error && filtered.length === 0) {
         return (
             <Section>
+                <Filter
+                    filters={filters}
+                    updateFilters={updateFilters}
+                    showDiscount={showDiscount}
+                />
                 <p>Oops! We haven`t found anything for you...</p>
             </Section>
         )
@@ -68,7 +67,7 @@ const ProductList = ({ pathBuilder, data, error, loading, showDiscount, from }) 
             {filtered.length > 0 && (
                 <Filter
                     filters={filters}
-                    setFilters={setFilters}
+                    updateFilters={updateFilters}
                     showDiscount={showDiscount}
                 />
             )}

@@ -25,9 +25,9 @@ const Cart = () => {
 
     const dispatch = useDispatch();
 
-    const onClearCart = useCallback(() => {
-        dispatch(clearCart());
-    }, [dispatch]);
+    // const onClearCart = useCallback(() => {
+    //     dispatch(clearCart());
+    // }, [dispatch]);
 
     const elements = items
         .filter(item => item.count > 0)
@@ -35,7 +35,6 @@ const Cart = () => {
             <CartItem key={item.id} {...item} />
         ));
 
-    
     return (
         <Section>
             <div>
@@ -45,21 +44,26 @@ const Cart = () => {
                         <Button text="Continue shopping" target="/products" status={true} width="30%" />
                     </div>
                 ) : (
-                    <div className={styles.cartBox}>
-                        <ul className={styles.ordersList}>{elements}</ul>
-                        <div className={styles.orderInfo}>
-                            <h3 className={styles.h3}>Order details</h3>
-                            <p className={styles.totalItems}>{totalItems} items</p>
-                            <div className={styles.totalPrice}>
-                                <p className={styles.totalItems}>Total</p>
-                                <p className={styles.totalBold}>${totalPrice.toFixed(2)}</p>
+                    <>
+                        <div className={styles.cartBox}>
+                            <ul className={styles.ordersList}>{elements}</ul>
+
+                            <div className={styles.orderInfo}>
+                                <h3 className={styles.h3}>Order details</h3>
+                                <p className={styles.totalItems}>{totalItems} items</p>
+                                <div className={styles.totalPrice}>
+                                    <p className={styles.totalItems}>Total</p>
+                                    <p className={styles.totalBold}>${totalPrice.toFixed(2)}</p>
+                                </div>
+                                <OrderForm onSuccess={() => dispatch(toggleModal(true))} />
                             </div>
-                            <OrderForm onSuccess={() => dispatch(toggleModal(true))} />
                         </div>
-                    </div>
+                        {/* <div style={{ alignSelf: "center" }}>
+                            <Button text="CLEAR CART" status="true" width="25vw" action={onClearCart} />
+                        </div> */}
+                    </>
                 )}
             </div>
-            <button onClick={onClearCart}>CLEAR CART</button>
         </Section>
     );
 };

@@ -31,7 +31,7 @@ const ProductItem = ({ pathBuilder, from, ...product }) => {
             onMouseLeave={() => setHovered(false)}
         >
             <Link to={pathBuilder(id)} state={from ? { from } : undefined}>
-                <div className={styles.productImgBox}>
+                <div className={styles.productImgBox} style={{ backgroundImage: `url(${baseURL}/${image})`, backgroundSize: 'contain', backgroundPosition: 'center' }}>
                     {discont_price && (
                         <SaleItemLabel
                             position="absolute"
@@ -41,11 +41,11 @@ const ProductItem = ({ pathBuilder, from, ...product }) => {
                             discont_price={discont_price}
                         />
                     )}
-                    <img
+                    {/* <img
                         className={styles.productImg}
-                        src={`${baseURL}/${image}`}
+                        src={}
                         alt={title}
-                    />
+                    /> */}
                     <Button
                         action={() => {
                             onAdd(product);

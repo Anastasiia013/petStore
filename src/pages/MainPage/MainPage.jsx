@@ -15,7 +15,7 @@ const MainPage = () => {
         <main>
             <section className={styles.heroSection}>
                 <h1 className='h1Main'>Amazing Discounts on Pets Products!</h1>
-                <Button text="Check out" status="true" width="clamp(30%, 30vw, 90%)" target="/sales" />
+                <Button text="Check out" status="true" width="fit-content" minWidth="25vw" target="/sales" />
             </section>
             <QuickLink to="/categories" text="All Categories" title="Categories" />
             <Categories fetchData={() => getLimitedCategories(limit)} />

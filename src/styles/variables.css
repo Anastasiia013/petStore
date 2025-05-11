@@ -9,6 +9,8 @@
     --white-text: #FFFFFF;
     --select-color: #80808080;
     --red-error: rgb(203, 6, 6);
+    --form-gradient-left: #2451C6;
+    --form-gradient-right: #0D50FF;
 
     --h1-font-size: clamp(2.5rem, 6vw, 6rem);
     --h2-font-size: clamp(2rem, 4vw, 4rem);

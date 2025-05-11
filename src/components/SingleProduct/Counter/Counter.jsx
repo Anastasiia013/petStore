@@ -1,6 +1,6 @@
 import styles from './Counter.module.css';
 
-const NewCounter = ({ plus, minus, count }) => {
+const Counter = ({ plus, minus, count }) => {
     return (
         <div className={styles.counter}>
             <button
@@ -24,4 +24,4 @@ const NewCounter = ({ plus, minus, count }) => {
     );
 };
 
-export default NewCounter;
+export default Counter;
