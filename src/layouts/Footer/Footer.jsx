@@ -2,7 +2,6 @@ import Section from '../../ui/Section/Section';
 
 import Instagram from '/footerImg/ic-instagram.svg';
 import Whatsapp from '/footerImg/ic-whatsapp.svg';
-import Map from '/footerImg/map.png'
 
 import styles from './Footer.module.css'
 

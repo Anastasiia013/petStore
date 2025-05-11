@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { deleteFromCart, increaseCount, decreaseCountinCart } from "../../../redux/cart/cartSlice";
 import Counter from "../../SingleProduct/Counter/Counter";
 import ClearBtn from '/images/clearBtn.png'

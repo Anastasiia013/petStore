@@ -9,7 +9,6 @@ const DescriptionBox = ({ description }) => {
     useEffect(() => {
         const el = descRef.current;
         if (el) {
-            // Проверяем, больше ли полной высоты, чем видимой
             setIsClamped(el.scrollHeight > el.clientHeight);
         }
     }, [description]);

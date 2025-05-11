@@ -7,17 +7,9 @@ body {
     /* height: 100vh; */
 }
 
-/* #root {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-} */
-
 main {
     display: flex;
     flex-direction: column;
-    /* padding-bottom: 40px; */
-
 }
 
 .title {
