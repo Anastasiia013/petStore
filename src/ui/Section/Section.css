@@ -1,5 +1,6 @@
 .section {
     width: 100%;
+    height: max-content;
     display: flex;
     justify-content: center;
     padding: 40px 0px;

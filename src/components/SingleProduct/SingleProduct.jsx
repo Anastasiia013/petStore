@@ -41,17 +41,8 @@ const SingleProduct = ({ product }) => {
     return (
         <Section>
             <div className={styles.productBox}>
-                {/* <div className={styles.mainImageBox}> */}
-                <div
-                    className={styles.imageBox}
-                    style={{
-                        backgroundImage: `url(${baseURL}/${image})`,
-                        // backgroundPosition: "start",
-                        backgroundRepeat: "no-repeat",
-                        // backgroundSize: "cover",
-                    }}
-                >
-                    {/* </div> */}
+                <div className={styles.mainImageBox}>
+                    <img src={`${baseURL}/${image}`} alt="" />
                 </div>
                 <div className={styles.productInfo}>
                     <h3>{title}</h3>
@@ -72,7 +63,7 @@ const SingleProduct = ({ product }) => {
                             status="true"
                             position="relative"
                             text="Add to cart"
-
+                            width="55%"
                             action={handleAddToCart}
                         />
                     </div>

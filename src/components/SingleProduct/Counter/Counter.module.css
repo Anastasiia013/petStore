@@ -1,6 +1,7 @@
 .counter {
     display: flex;
     width: auto;
+    flex-basis: 45%;
     justify-content: space-between;
     height: 100%;
     border-top: 1px solid var(--grey-divider);

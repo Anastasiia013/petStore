@@ -6,7 +6,7 @@
 }
 
 .description {
-    font-size: 16px;
+    font-size: var(--h5-font-size);
     line-height: 130%;
     overflow: hidden;
     text-overflow: ellipsis;
