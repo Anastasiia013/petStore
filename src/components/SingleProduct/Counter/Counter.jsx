@@ -1,3 +1,6 @@
+import Plus from '/images/plus.svg'
+import Minus from '/images/minus.svg'
+
 import styles from './Counter.module.css';
 
 const Counter = ({ plus, minus, count }) => {
@@ -8,7 +11,7 @@ const Counter = ({ plus, minus, count }) => {
                 onClick={minus}
                 type='button'
             >
-                <img src="/images/minus.svg" alt="decrease" />
+                <img src={Minus} alt="decrease" />
             </button>
 
             <div className={styles.quantity}>{count || 1}</div>
@@ -18,7 +21,7 @@ const Counter = ({ plus, minus, count }) => {
                 onClick={plus}
                 type="button"
             >
-                <img src="/images/plus.svg" alt="increase" />
+                <img src={Plus} alt="increase" />
             </button>
         </div>
     );

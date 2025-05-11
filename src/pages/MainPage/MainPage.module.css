@@ -14,7 +14,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url(../../headerImg/main-background.png);
+    background-image: url(/petStore/headerImg/main-background.png);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
