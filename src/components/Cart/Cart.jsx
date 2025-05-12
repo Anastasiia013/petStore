@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
-import { useCallback } from "react";
 import { toggleModal } from '../../redux/modal/modalSlice';
 
 import {
@@ -8,8 +7,6 @@ import {
     selectTotalCartPrice,
     selectTotalCartItems
 } from "../../redux/cart/cart_selectors";
-
-import { clearCart } from '../../redux/cart/cartSlice';
 
 import CartItem from "./CartItem/CartItem";
 import Button from "../../ui/Button/Button";
@@ -24,10 +21,6 @@ const Cart = () => {
     const totalItems = useSelector(selectTotalCartItems);
 
     const dispatch = useDispatch();
-
-    // const onClearCart = useCallback(() => {
-    //     dispatch(clearCart());
-    // }, [dispatch]);
 
     const elements = items
         .filter(item => item.count > 0)
@@ -58,9 +51,6 @@ const Cart = () => {
                                 <OrderForm onSuccess={() => dispatch(toggleModal(true))} />
                             </div>
                         </div>
-                        {/* <div style={{ alignSelf: "center" }}>
-                            <Button text="CLEAR CART" status="true" width="25vw" action={onClearCart} />
-                        </div> */}
                     </>
                 )}
             </div>

@@ -1,45 +1,27 @@
-import { useState, useRef, useEffect } from 'react';
-import styles from './CustomSelect.module.css';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const CustomSelect = ({ name, value, onChange, options }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const wrapperRef = useRef(null);
-
-    const toggleOpen = () => setIsOpen(prev => !prev);
-
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-                setIsOpen(false);
-            }
-        };
-
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
-
     return (
-        <div ref={wrapperRef} className={`${styles.customSelectWrapper} ${isOpen ? styles.open : ''}`}>
-            <select
+        <FormControl fullWidth size="small">
+            <Select
+                MenuProps={{ disableScrollLock: true }}
+                labelId={`${name}-label`}
+                id={`${name}-select`}
                 name={name}
                 value={value}
-                onChange={(e) => {
-                    onChange(e);
-                    toggleOpen();
-                }}
-                onClick={toggleOpen}
-                className={styles.customSelect}
+                onChange={onChange}
+                sx={{ fontFamily: "Montserrat, sans-serif", width: "14vw", minWidth: "max-content", fontSize: "var(--h5-font-size)" }}
             >
-                {options.map(opt => (
-                    <option onClick={toggleOpen} key={opt.value} value={opt.value}>
+                {options.map((opt) => (
+                    <MenuItem key={opt.value} value={opt.value}
+                        sx={{ fontFamily: "Montserrat, sans-serif", color: "#777" }}>
                         {opt.label}
-                    </option>
+                    </MenuItem>
                 ))}
-            </select>
-            <span className={styles.arrowIcon}></span>
-        </div>
+            </Select>
+        </FormControl>
     );
 };
 

@@ -1,12 +1,10 @@
+import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import { Link } from 'react-router-dom';
-import React from 'react';
-
 import CustomSpinner from '../../ui/CustomSpinner/CustomSpinner';
-
 import backendInstance from '../../api/backendInstance';
-
 import Section from "../../ui/Section/Section";
+
 import styles from './Categories.module.css';
 
 const Categories = ({ fetchData }) => {

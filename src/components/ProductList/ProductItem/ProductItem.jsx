@@ -6,7 +6,6 @@ import Button from "../../../ui/Button/Button";
 import SaleItemLabel from "./SaleItemLabel/SaleItemLabel";
 import PriceInfo from "./PriceInfo/PriceInfo";
 import { addToCart } from "../../../redux/cart/cartSlice";
-
 import backendInstance from "../../../api/backendInstance";
 
 import styles from './ProductItem.module.css';
@@ -41,11 +40,6 @@ const ProductItem = ({ pathBuilder, from, ...product }) => {
                             discont_price={discont_price}
                         />
                     )}
-                    {/* <img
-                        className={styles.productImg}
-                        src={}
-                        alt={title}
-                    /> */}
                     <Button
                         action={() => {
                             onAdd(product);

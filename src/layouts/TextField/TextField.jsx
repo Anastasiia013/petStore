@@ -1,6 +1,6 @@
 import styles from './TextField.module.css'
 
-const TextField = ({ register, errors, name, type, id, placeholder, className }) => {
+const TextField = ({ register, name, type, id, placeholder }) => {
     return (
         <input
             {...register(name, { required: `Please, enter your ${placeholder.toLowerCase()}.` })}

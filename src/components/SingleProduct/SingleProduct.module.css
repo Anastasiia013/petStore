@@ -21,11 +21,6 @@
     display: block;
 }
 
-/* .imageBox {
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
-
 .productInfo {
     display: flex;
     flex-direction: column;

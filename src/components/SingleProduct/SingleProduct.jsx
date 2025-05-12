@@ -1,19 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 import { selectCart } from "../../redux/cart/cart_selectors";
-
 import PriceInfo from "../ProductList/ProductItem/PriceInfo/PriceInfo";
 import SaleItemLabel from "../ProductList/ProductItem/SaleItemLabel/SaleItemLabel";
 import Button from '../../ui/Button/Button';
 import Counter from "./Counter/Counter";
 import DescriptionBox from "./DescriptionBox/DescriptionBox";
 import Section from "../../ui/Section/Section";
-
 import { addToCart, increaseCountInCart } from "../../redux/cart/cartSlice";
 import backendInstance from "../../api/backendInstance";
 
 import styles from './SingleProduct.module.css';
-import { useState } from "react";
+
 
 const SingleProduct = ({ product }) => {
     if (!product) return null;

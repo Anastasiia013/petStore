@@ -4,7 +4,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
-    /* justify-content: space-around; */
     list-style: none;
 }
 
@@ -13,7 +12,6 @@
         justify-content: center;
     }
 }
-
 
 @media (max-width: 672px) {
     .productsList {

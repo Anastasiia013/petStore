@@ -29,32 +29,7 @@
 
 }
 
-/* .orderFormInput {
-    width: 100%;
-    padding: 16px 32px;
-    border-radius: 6px;
-    border: 1px solid var(--grey-divider);
-    font-size: var(--h4-font-size);
-    line-height: 130%;
-    font-weight: 500;
-    outline: none;
-}
-
-.orderFormInput::placeholder {
-    opacity: 1;
-}
-
-.orderFormInput:last-of-type {
-    margin-bottom: 20px;
-} */
-
 .orderFormError {
     color: var(--red-error);
     opacity: 0.7;
 }
-
-/* @media (max-width: 1090px) {
-    .orderForm {
-        width: 100%;
-    }
-} */

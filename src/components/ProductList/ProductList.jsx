@@ -1,5 +1,4 @@
 import { useProductsFilters } from '../../hooks/useProductsFilters';
-
 import Filter from '../Filter/Filter';
 import ProductItem from './ProductItem/ProductItem';
 import Section from '../../ui/Section/Section';

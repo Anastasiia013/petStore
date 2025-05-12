@@ -5,7 +5,6 @@ import Section from "../../ui/Section/Section";
 import FormImage from '/images/form.png'
 import ButtonDiscount from '../../ui/ButtonDiscount/ButtonDiscount'
 import TextField from '../../layouts/TextField/TextField';
-
 import { getSale } from "../../api/saleRequest";
 import { defaultValues } from './discountFields';
 import CustomSpinner from '../../ui/CustomSpinner/CustomSpinner';
@@ -21,8 +20,6 @@ const DiscountForm = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const [isSuccess, setIsSuccess] = useState(false);
-
     const { register, handleSubmit, reset, formState: { errors } } = useForm({
         defaultValues,
     });
@@ -35,7 +32,6 @@ const DiscountForm = () => {
             if (!data) throw new Error("No data returned from server");
 
             setSale(data);
-            setIsSuccess(true);
         } catch (error) {
             console.error("Form error:", error);
             setError(error.message)
@@ -96,7 +92,11 @@ const DiscountForm = () => {
                                     />
                                     {errors.email && <p className={styles.discontFormError}>{errors.email.message}</p>}
 
-                                    <ButtonDiscount isSuccess={isSuccess} />
+                                    <button
+                                        className={styles.discountBtn}
+                                        type="submit">
+                                        Get a discount
+                                    </button>
                                 </form>
                             </>
                         )}

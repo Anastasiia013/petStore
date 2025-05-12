@@ -11,8 +11,6 @@
 }
 
 .productImgBox {
-    /* max-height: 284px;
-    max-width: 319px; */
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
     display: flex;
@@ -21,16 +19,8 @@
     justify-content: center;
     position: relative;
     height: 284px;
-    /* width: clamp(200px, 40vw, 319px); */
     background-repeat: no-repeat;
 }
-
-/* .productImg {
-    max-height: 284px;
-    max-width: 319px;
-    border-top-right-radius: 12px;
-    border-top-left-radius: 12px;
-} */
 
 .descriptionBox {
     padding: 20px 32px;
@@ -61,7 +51,6 @@
 
     .productImgBox {
         width: auto;
-        /* height: auto; */
     }
 }
 

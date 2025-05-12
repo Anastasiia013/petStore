@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import { getSingleCategory } from "../../api/categories";
-
 import ProductList from "../../components/ProductList/ProductList";
 import Breadcrumbs from "../../layouts/BreadCrumbs/BreadCrumbs";
 import {SimpleTitle} from "../../layouts/PageTitle/PageTitle";

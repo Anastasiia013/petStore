@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { deleteFromCart, increaseCount, decreaseCountinCart } from "../../../redux/cart/cartSlice";
 import Counter from "../../SingleProduct/Counter/Counter";
 import ClearBtn from '/images/clearBtn.png'
-
 import backendInstance from "../../../api/backendInstance";
 
 import styles from './CartItem.module.css'

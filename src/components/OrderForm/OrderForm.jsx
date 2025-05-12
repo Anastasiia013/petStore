@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form'
 
 import CustomSpinner from '../../ui/CustomSpinner/CustomSpinner';
-
-import OrderButtonWrapper from '../../ui/OrderButtonWrapper/OrderButtonWrapper';
+import Button from '../../ui/Button/Button';
 import TextField from '../../layouts/TextField/TextField';
 import { defaultValues } from './orderFields';
 import { setOrder } from '../../api/order';
@@ -100,7 +99,13 @@ const OrderForm = ({ onSuccess }) => {
                         />
                         {errors.email && <p className={styles.orderFormError}>{errors.email.message}</p>}
 
-                        <OrderButtonWrapper />
+                        <Button
+                            type="submit"
+                            status={true}
+                            width="100%"
+                            text="Order"
+                            position="relative"
+                        />
                     </form>
                 </>
             )}

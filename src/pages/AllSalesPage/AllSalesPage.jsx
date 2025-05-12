@@ -1,6 +1,5 @@
 import useFetch from '../../hooks/useFetch';
 import { getAllProducts } from '../../api/products';
-
 import Breadcrumbs from '../../layouts/BreadCrumbs/BreadCrumbs';
 import {SimpleTitle} from '../../layouts/PageTitle/PageTitle';
 import ProductList from '../../components/ProductList/ProductList';

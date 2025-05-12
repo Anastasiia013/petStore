@@ -1,5 +1,5 @@
 import CustomCheckbox from '../../ui/CustomCheckbox/CustomCheckbox';
-import CustomSelect from '../../ui/CustomSelect/CustomSelectNew';
+import CustomSelect from '../../ui/CustomSelect/CustomSelect';
 import { filterOptions } from './filterOptions';
 
 import styles from './Filter.module.css';
