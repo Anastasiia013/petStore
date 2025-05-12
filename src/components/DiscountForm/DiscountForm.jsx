@@ -2,8 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useId, useState } from "react";
 
 import Section from "../../ui/Section/Section";
-import FormImage from '/images/form.png'
-import ButtonDiscount from '../../ui/ButtonDiscount/ButtonDiscount'
+import FormImage from '/images/form.png';
 import TextField from '../../layouts/TextField/TextField';
 import { getSale } from "../../api/saleRequest";
 import { defaultValues } from './discountFields';
