@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useId, useState } from "react";
+import { useEffect } from 'react';
 
 import Section from "../../ui/Section/Section";
 import FormImage from '/images/form.png';
@@ -18,6 +19,7 @@ const DiscountForm = () => {
     const [sale, setSale] = useState({});
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm({
         defaultValues,
@@ -42,7 +44,15 @@ const DiscountForm = () => {
     const onSubmit = async values => {
         await onGetSale(values);
         reset();
+        setIsSubmitted(true);
     }
+
+    useEffect(() => {
+        if (isSubmitted) {
+            const timer = setTimeout(() => setIsSubmitted(false), 8000);
+            return () => clearTimeout(timer);
+        }
+    }, [isSubmitted]);
 
     return (
         <>
@@ -93,9 +103,12 @@ const DiscountForm = () => {
 
                                     <button
                                         className={styles.discountBtn}
-                                        type="submit">
-                                        Get a discount
+                                        type="submit"
+                                        disabled={isSubmitted}
+                                    >
+                                        {isSubmitted ? "Request submitted!" : "Get a discount"}
                                     </button>
+
                                 </form>
                             </>
                         )}
