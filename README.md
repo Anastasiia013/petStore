@@ -1,59 +1,76 @@
-Интернет-магазин товаров для животных Pet Store
+Pet Store — Online Shop for Pet Products
 
--- Описание проекта
+📝 Project Description
 
-Это интернет-магазин товаров для домашних животных, сделанный на React, с использованием Redux Toolkit, Axios и React-Router-Dom. Релизованы заказ через форму, корзина, фильтрация, API.
+Pet Store is a responsive e-commerce web application for pet products, built with React, Redux Toolkit, Axios, and React Router DOM.
+It includes full shopping functionality: product catalog, filtering, cart management, order form, and integration with a custom backend API.
 
--- Цель
+🎯 Project Goals
 
-Собрать полноценное приложение с реальным функционалом: маршруты, формы, интерактив, корзина, анимации, адаптив.
+    Build a realistic, fully functional e-commerce app
 
--- Процесс
+    Implement routing, forms, interactivity, and responsive design
 
-1. Макет из Figma
+    Practice working with a real API and managing state with Redux
 
-Разметка и логика взяты строго из макета. Реализованы все ключевые страницы:
+⚙️ Development Process
+1. UI from Figma
 
-    Главная
-    Категории
-    Продукты категории
-    Все товары
-    Товары со скидкой
-    Карточка товара
-    Корзина (пустая / с товарами / успешный заказ)
-    404
+The layout and logic follow a Figma design and include all key pages:
 
-2. Backend
+    Home
 
-Сервер на Node.js с SQLite. Данные по категориям, товарам, заказам.
+    Categories
 
-    /modules: схемы товаров и категорий
-    /routes: API для продуктов, заказов, категорий
-    Подключение через Axios
+    Category Products
 
-Репозиторий backend: https://github.com/strexzy/Pet-Shop-Backend
+    All Products
 
--- Структура проекта
+    Discounted Products
 
-    /components: переиспользуемые штуки (карточки, кнопки)
-    /pages: главная, категории и т.д.
-    /layouts: шапка и подвал
-    /ui: базовые элементы интерфейса
-    Redux store
-    Axios
-    Роутинг через react-router-dom
+    Product Details
 
--- Header и Footer
+    Shopping Cart (empty / filled / order success)
 
-Header — логотип, навигация, иконка корзины с числом товаров.
-Footer — соцсети, контакты и карта.
+    404 Page
 
--- Стандарты
+2. Backend API
 
-    Консоль без ошибок и console.log
-    Переиспользуемые компоненты
-    Адаптив и модульные стили
-    Анимации и SVG
+Backend built with Node.js and SQLite, providing data for products, categories, and orders.
 
+    /modules: data schemas for products and categories
+
+    /routes: API routes for products, categories, and orders
+
+    Frontend connects via Axios
+
+🔗 Backend Repository
+🧱 Project Structure
+
+/components   → reusable components (cards, buttons)
+/pages        → route pages (Home, Categories, etc.)
+/layouts      → layout structure (Header, Footer)
+/ui           → base UI elements (inputs, select, etc.)
+redux store   → state management
+axios         → API requests
+react-router  → routing and navigation
+
+📌 Header & Footer
+
+    Header: Logo, navigation, cart icon with product count
+
+    Footer: Social links, contact info, embedded map
+
+✅ Standards
+
+    No console errors or leftover console.logs
+
+    Reusable components and modular styles
+
+    Fully responsive design
+
+    Smooth animations and custom SVGs
+
+👩‍💻 Author
 **Anastasiia Posokhova**
 [GitHub](https://github.com/Anastasiia013)
