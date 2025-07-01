@@ -3,7 +3,7 @@ Pet Store — Online Shop for Pet Products
 📝 Project Description
 
 Pet Store is a responsive e-commerce web application for pet products, built with React, Redux Toolkit, Axios, and React Router DOM.
-It includes full shopping functionality: product catalog, filtering, cart management, order form, and integration with a custom backend API.
+It includes full shopping functionality: product catalog, filtering, cart management, order form, and integration with a custom backend API(backend is working on render.com, so it takes some time to reload a website at first).
 
 🎯 Project Goals
 
